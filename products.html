@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="GBfoods Ghana product range - Gino, Jumbo, Pomo and Jago products with prices in Ghana Cedis."
+    />
+    <title>Products | GBfoods Ghana</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --red: #c40000;
+        --gold: #ffcc00;
+        --green: #1a6b1a;
+        --light: #fff8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Times New Roman", Times, serif;
+        background-color: var(--light);
+        color: #111111;
+      }
+
+      /* ── HEADER ── */
+      header {
+        background-color: var(--red);
+        color: #ffffff;
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      header h1 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2.5em;
+      }
+
+      /* ── NAV ── */
+      nav {
+        background-color: #222222;
+        padding: 12px 10px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav a {
+        color: #ffffff;
+        margin: 0 18px;
+        text-decoration: none;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        display: inline-block;
+        padding: 5px 0;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover,
+      nav a:focus {
+        color: var(--gold);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: linear-gradient(135deg, #8b0000, #c40000);
+        color: #ffffff;
+        padding: 50px 40px;
+        text-align: center;
+      }
+
+      .hero h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2.2em;
+        margin-bottom: 10px;
+      }
+
+      .hero p {
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.8;
+        font-size: 1.05em;
+      }
+
+      /* ── GALLERY ── */
+      .product-gallery {
+        background-color: #ffffff;
+        padding: 60px 40px;
+        text-align: center;
+      }
+
+      .product-gallery h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2em;
+        color: var(--red);
+        margin-bottom: 30px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 4px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-grid img:hover {
+        transform: scale(1.03);
+      }
+
+      /* ── TABLE ── */
+      .table-section {
+        padding: 60px 40px;
+      }
+
+      .table-section h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2em;
+        color: var(--red);
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .table-section .table-subtitle {
+        text-align: center;
+        color: #666666;
+        margin-bottom: 30px;
+      }
+
+      .table-wrapper {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 70%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        min-width: 300px;
+      }
+
+      thead tr {
+        background-color: var(--red);
+        color: #ffffff;
+      }
+
+      th {
+        padding: 16px 20px;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        text-align: left;
+      }
+
+      td {
+        padding: 14px 20px;
+        border-bottom: 1px solid #eeeeee;
+        font-size: 1em;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fff8f0;
+      }
+
+      tbody tr:hover {
+        background-color: #fff0e0;
+      }
+
+      .price {
+        font-weight: bold;
+        color: var(--green);
+        font-family: "Source Sans 3", Arial, sans-serif;
+        text-align: right;
+      }
+
+      /* ── DOWNLOAD ── */
+      .download-section {
+        background-color: #222222;
+        color: #ffffff;
+        padding: 50px 40px;
+        text-align: center;
+      }
+
+      .download-section h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.8em;
+        color: var(--gold);
+        margin-bottom: 15px;
+      }
+
+      .download-section p {
+        margin-bottom: 25px;
+        color: #cccccc;
+      }
+
+      .download-btn {
+        display: inline-block;
+        background-color: var(--gold);
+        color: #111111;
+        padding: 14px 40px;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .download-btn:hover,
+      .download-btn:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background-color: var(--red);
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-size: 0.9em;
+      }
+
+      /* ══════════════════════════════
+           MEDIA QUERIES
+        ══════════════════════════════ */
+
+      @media (max-width: 900px) {
+        header h1 {
+          font-size: 2em;
+        }
+        .hero {
+          padding: 40px 25px;
+        }
+        .hero h2 {
+          font-size: 1.8em;
+        }
+        .product-gallery {
+          padding: 40px 25px;
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .table-section {
+          padding: 40px 25px;
+        }
+        table {
+          width: 90%;
+        }
+        .download-section {
+          padding: 40px 25px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 1.6em;
+        }
+        nav a {
+          margin: 0 8px;
+          font-size: 0.75em;
+        }
+        .hero {
+          padding: 30px 15px;
+        }
+        .hero h2 {
+          font-size: 1.5em;
+        }
+        .hero p {
+          font-size: 0.95em;
+        }
+        .product-gallery {
+          padding: 30px 15px;
+        }
+        .product-gallery h2 {
+          font-size: 1.5em;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-grid img {
+          height: 200px;
+        }
+        .table-section {
+          padding: 30px 15px;
+        }
+        .table-section h2 {
+          font-size: 1.5em;
+        }
+        table {
+          width: 100%;
+        }
+        th,
+        td {
+          padding: 10px 12px;
+          font-size: 0.9em;
+        }
+        .download-section {
+          padding: 30px 15px;
+        }
+        .download-section h2 {
+          font-size: 1.4em;
+        }
+        .download-btn {
+          padding: 12px 25px;
+          font-size: 0.85em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Our Products</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="media.html">Media</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <h2>Quality Products for Every Ghanaian Kitchen</h2>
+        <p>
+          From tomato mixes to seasoning cubes, pasta to spices &mdash; GBfoods
+          Ghana delivers authentic taste and quality you can trust.
+        </p>
+      </section>
+
+      <section class="product-gallery">
+        <h2>Product Gallery</h2>
+        <div class="gallery-grid">
+          <img src="pics/1.jpeg" alt="Gino tomato paste seasoning range" />
+          <img src="pics/12.jpeg" alt="Gino herbs and spices range" />
+          <img src="pics/5.jpeg" alt="GBfoods full product line" />
+        </div>
+      </section>
+
+      <section class="table-section">
+        <h2>Product Price List</h2>
+        <p class="table-subtitle">Current retail prices in Ghana Cedis (GHS)</p>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price (GHS)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Gino Tomato Mix 70g</td>
+                <td class="price">GHS 3.50</td>
+              </tr>
+              <tr>
+                <td>Gino Tomato Paste 210g</td>
+                <td class="price">GHS 6.00</td>
+              </tr>
+              <tr>
+                <td>Jumbo Chicken Cube 12g</td>
+                <td class="price">GHS 1.50</td>
+              </tr>
+              <tr>
+                <td>Jumbo Beef Cube 12g</td>
+                <td class="price">GHS 1.50</td>
+              </tr>
+              <tr>
+                <td>Pomo Tomato Mix 70g</td>
+                <td class="price">GHS 4.00</td>
+              </tr>
+              <tr>
+                <td>Jago Mayonnaise 400g</td>
+                <td class="price">GHS 8.50</td>
+              </tr>
+              <tr>
+                <td>Gino Spaghetti 400g</td>
+                <td class="price">GHS 7.00</td>
+              </tr>
+              <tr>
+                <td>Gino Macaroni 400g</td>
+                <td class="price">GHS 7.00</td>
+              </tr>
+              <tr>
+                <td>Gino Curry Powder 10g</td>
+                <td class="price">GHS 5.00</td>
+              </tr>
+              <tr>
+                <td>Gino Peppe &amp; Onion Mix 70g</td>
+                <td class="price">GHS 6.50</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="download-section">
+        <h2>Download Our Product Catalogue</h2>
+        <p>
+          Get the full list of our products, nutritional information, and
+          wholesale pricing.
+        </p>
+        <a href="pics/order_enquiry_form.pdf" download class="download-btn"
+          >⬇ Download Order Form (PDF)</a
+        >
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 GBfoods Ghana | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>

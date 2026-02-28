@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="GBfoods Ghana media gallery, promotional video and customer testimonials."
+    />
+    <title>Media &amp; Testimonials | GBfoods Ghana</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --red: #c40000;
+        --gold: #ffcc00;
+        --green: #1a6b1a;
+        --light: #fff8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Times New Roman", Times, serif;
+        background-color: var(--light);
+        color: #111111;
+      }
+
+      /* ── HEADER ── */
+      header {
+        background-color: var(--red);
+        color: #ffffff;
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      header h1 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2.5em;
+      }
+
+      /* ── NAV ── */
+      nav {
+        background-color: #222222;
+        padding: 12px 10px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav a {
+        color: #ffffff;
+        margin: 0 18px;
+        text-decoration: none;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        display: inline-block;
+        padding: 5px 0;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover,
+      nav a:focus {
+        color: var(--gold);
+      }
+
+      /* ── VIDEO ── */
+      .video-section {
+        background-color: #111111;
+        padding: 60px 40px;
+        text-align: center;
+      }
+
+      .video-section h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2em;
+        color: var(--gold);
+        margin-bottom: 10px;
+      }
+
+      .video-section p {
+        color: #aaaaaa;
+        margin-bottom: 30px;
+      }
+
+      video {
+        width: 100%;
+        max-width: 700px;
+        border: 3px solid var(--red);
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* ── GALLERY ── */
+      .gallery {
+        background-color: #ffffff;
+        padding: 60px 40px;
+      }
+
+      .gallery h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2em;
+        color: var(--red);
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-grid img:hover {
+        transform: scale(1.04);
+      }
+
+      /* ── TESTIMONIALS ── */
+      .testimonials {
+        background-color: var(--light);
+        padding: 60px 40px;
+      }
+
+      .testimonials h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2em;
+        color: var(--red);
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .testimonial-card {
+        background-color: #ffffff;
+        padding: 30px;
+        border-left: 4px solid var(--red);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        position: relative;
+      }
+
+      .testimonial-card::before {
+        content: "\201C";
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 5em;
+        color: var(--red);
+        opacity: 0.15;
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        line-height: 1;
+        pointer-events: none;
+      }
+
+      .testimonial-card p {
+        line-height: 1.8;
+        color: #333333;
+        margin-bottom: 15px;
+        font-style: italic;
+      }
+
+      .testimonial-card .author {
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-weight: 600;
+        color: var(--red);
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background-color: var(--red);
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-size: 0.9em;
+      }
+
+      /* ══════════════════════════════
+           MEDIA QUERIES
+        ══════════════════════════════ */
+
+      @media (max-width: 900px) {
+        header h1 {
+          font-size: 2em;
+        }
+        .video-section {
+          padding: 40px 25px;
+        }
+        .gallery {
+          padding: 40px 25px;
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .testimonials {
+          padding: 40px 25px;
+        }
+        .testimonials-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 1.6em;
+        }
+        nav a {
+          margin: 0 8px;
+          font-size: 0.75em;
+        }
+        .video-section {
+          padding: 30px 15px;
+        }
+        .video-section h2 {
+          font-size: 1.5em;
+        }
+        .gallery {
+          padding: 30px 15px;
+        }
+        .gallery h2 {
+          font-size: 1.5em;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-grid img {
+          height: 200px;
+        }
+        .testimonials {
+          padding: 30px 15px;
+        }
+        .testimonials h2 {
+          font-size: 1.5em;
+        }
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Media &amp; Testimonials</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="media.html">Media</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+      <section class="video-section">
+        <h2>Promotional Video</h2>
+        <p>Watch how GBfoods Ghana brings taste to every home</p>
+        <video controls poster="pics/8.jpeg">
+          <source src="pics/promo.mp4" type="video/mp4" />
+          <p>
+            Your browser does not support the video tag.
+            <a href="promo.mp4">Download the video</a>.
+          </p>
+        </video>
+      </section>
+
+      <section class="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-grid">
+          <img src="pics/8.jpeg" alt="Gino Jollof Mix product launch event" />
+          <img src="pics/2.jpeg" alt="Gino Thai Jasmine Rice bags" />
+          <img src="pics/7.jpeg" alt="Pomo tomato mix production line" />
+          <img src="pics/9.jpeg" alt="Gino curry powder sachet" />
+          <img src="pics/3.jpeg" alt="GBfoods Ghana warehouse facility" />
+          <img src="pics/1.jpeg" alt="Full Gino product range display" />
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p>
+              Gino makes my jollof taste amazing! My whole family cannot get
+              enough of it. I have been using it for over 5 years and will never
+              switch.
+            </p>
+            <span class="author">&#8212; Ama K., Accra</span>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              Jumbo cubes bring real flavour to my soups. As a caterer, I trust
+              GBfoods products every day to keep my customers coming back.
+            </p>
+            <span class="author">&#8212; Kofi A., Tema</span>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              The Pomo tomato mix is incredible. It gives my stew that deep red
+              colour and rich taste that my customers love. Highly recommended!
+            </p>
+            <span class="author">&#8212; Abena M., Kumasi</span>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              I use Gino spaghetti every week. It cooks perfectly and the
+              quality is consistent. My kids love spaghetti night!
+            </p>
+            <span class="author">&#8212; Emmanuel D., Takoradi</span>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              Jago mayonnaise is the best on the market. Smooth, creamy and
+              delicious. It is the only brand I use in my restaurant.
+            </p>
+            <span class="author">&#8212; Akosua B., Cape Coast</span>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              The new Gino Jollof Mix is a game changer! It saves so much time
+              and the flavour is authentic. Perfect for busy working mothers.
+            </p>
+            <span class="author">&#8212; Efua O., Accra</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 GBfoods Ghana | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>

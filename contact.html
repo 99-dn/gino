@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact GBfoods Ghana - address, phone, email, social media and location map."
+    />
+    <title>Contact Us | GBfoods Ghana</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --red: #c40000;
+        --gold: #ffcc00;
+        --green: #1a6b1a;
+        --light: #fff8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Times New Roman", Times, serif;
+        background-color: var(--light);
+        color: #111111;
+      }
+
+      /* ── HEADER ── */
+      header {
+        background-color: var(--red);
+        color: #ffffff;
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      header h1 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2.5em;
+      }
+
+      /* ── NAV ── */
+      nav {
+        background-color: #222222;
+        padding: 12px 10px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav a {
+        color: #ffffff;
+        margin: 0 18px;
+        text-decoration: none;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        display: inline-block;
+        padding: 5px 0;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover,
+      nav a:focus {
+        color: var(--gold);
+      }
+
+      /* ── CONTACT SECTION ── */
+      .contact-section {
+        padding: 60px 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .contact-section h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2em;
+        color: var(--red);
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+
+      /* ── CONTACT INFO ── */
+      .contact-info h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.4em;
+        color: var(--red);
+        margin-bottom: 25px;
+      }
+
+      .info-row {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        align-items: flex-start;
+      }
+
+      .info-icon {
+        background-color: var(--red);
+        color: #ffffff;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1em;
+        flex-shrink: 0;
+      }
+
+      .info-text strong {
+        display: block;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #999999;
+        margin-bottom: 2px;
+      }
+
+      .info-text span,
+      .info-text a {
+        font-size: 1em;
+        color: #333333;
+        text-decoration: none;
+        line-height: 1.6;
+      }
+
+      .info-text a:hover,
+      .info-text a:focus {
+        color: var(--red);
+        text-decoration: underline;
+      }
+
+      /* ── SOCIAL MEDIA ── */
+      .social-section {
+        margin-top: 30px;
+      }
+
+      .social-section h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.4em;
+        color: var(--red);
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #111111;
+        color: #ffffff;
+        padding: 10px 18px;
+        text-decoration: none;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-size: 0.88em;
+        font-weight: 600;
+        transition:
+          transform 0.2s ease,
+          opacity 0.2s ease;
+      }
+
+      .social-link:hover,
+      .social-link:focus {
+        transform: translateY(-2px);
+        opacity: 0.9;
+      }
+
+      .social-link.facebook {
+        background-color: #1877f2;
+      }
+      .social-link.instagram {
+        background-color: #e1306c;
+      }
+      .social-link.twitter {
+        background-color: #1da1f2;
+      }
+      .social-link.linkedin {
+        background-color: #0a66c2;
+      }
+      .social-link.youtube {
+        background-color: #ff0000;
+      }
+
+      /* ── CONTACT FORM ── */
+      .contact-form h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.4em;
+        color: var(--red);
+        margin-bottom: 25px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #666666;
+        margin-bottom: 6px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #dddddd;
+        background-color: #ffffff;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 1em;
+        color: #111111;
+        transition: border-color 0.3s ease;
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      textarea:focus,
+      select:focus {
+        border-color: var(--red);
+      }
+
+      textarea {
+        height: 120px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background-color: var(--red);
+        color: #ffffff;
+        border: none;
+        padding: 14px 40px;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 1em;
+        transition:
+          background-color 0.3s ease,
+          transform 0.2s ease;
+      }
+
+      .submit-btn:hover,
+      .submit-btn:focus {
+        background-color: #8b0000;
+        transform: translateY(-2px);
+      }
+
+      /* ── MAP ── */
+      .map-section {
+        background-color: #111111;
+        padding: 60px 40px;
+        text-align: center;
+      }
+
+      .map-section h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2em;
+        color: var(--gold);
+        margin-bottom: 25px;
+      }
+
+      .map-section iframe {
+        width: 100%;
+        max-width: 800px;
+        height: 380px;
+        border: 3px solid var(--red);
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background-color: var(--red);
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-size: 0.9em;
+      }
+
+      /* ══════════════════════════════
+           MEDIA QUERIES
+        ══════════════════════════════ */
+
+      @media (max-width: 900px) {
+        header h1 {
+          font-size: 2em;
+        }
+        .contact-section {
+          padding: 40px 25px;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+        .map-section {
+          padding: 40px 25px;
+        }
+        .map-section iframe {
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 1.6em;
+        }
+        nav a {
+          margin: 0 8px;
+          font-size: 0.75em;
+        }
+        .contact-section {
+          padding: 30px 15px;
+        }
+        .contact-section h2 {
+          font-size: 1.5em;
+          margin-bottom: 25px;
+        }
+        .contact-info h3,
+        .social-section h3,
+        .contact-form h3 {
+          font-size: 1.2em;
+        }
+        .social-link {
+          padding: 8px 14px;
+          font-size: 0.82em;
+        }
+        .submit-btn {
+          width: 100%;
+          padding: 14px;
+        }
+        .map-section {
+          padding: 30px 15px;
+        }
+        .map-section h2 {
+          font-size: 1.5em;
+        }
+        .map-section iframe {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Contact Us</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="media.html">Media</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+      <section class="contact-section">
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+          <div>
+            <div class="contact-info">
+              <h3>Contact Information</h3>
+              <div class="info-row">
+                <div class="info-icon" aria-hidden="true">&#128205;</div>
+                <div class="info-text">
+                  <strong>Address</strong>
+                  <span
+                    >Opposite POLYKRAFT LTD,<br />Heavy Industrial Area, Tema,
+                    Ghana</span
+                  >
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-icon" aria-hidden="true">&#128222;</div>
+                <div class="info-text">
+                  <strong>Phone</strong>
+                  <a href="tel:+233303939084">+233 30 3939 084</a>
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-icon" aria-hidden="true">&#9993;</div>
+                <div class="info-text">
+                  <strong>Email</strong>
+                  <a href="mailto:info@gbfoodsghana.com"
+                    >info@gbfoodsghana.com</a
+                  >
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-icon" aria-hidden="true">&#128336;</div>
+                <div class="info-text">
+                  <strong>Working Hours</strong>
+                  <span>Monday &ndash; Friday: 8:00 AM &ndash; 5:00 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-section">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a
+                  href="https://www.facebook.com/GBfoodsGhana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link facebook"
+                  >&#128248; Facebook</a
+                >
+                <a
+                  href="https://www.instagram.com/gbfoodsghana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link instagram"
+                  >&#128247; Instagram</a
+                >
+                <a
+                  href="https://www.twitter.com/gbfoodsghana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link twitter"
+                  >&#128038; Twitter</a
+                >
+                <a
+                  href="https://www.linkedin.com/company/gbfoods"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link linkedin"
+                  >&#128188; LinkedIn</a
+                >
+                <a
+                  href="https://www.youtube.com/@gbfoodsghana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link youtube"
+                  >&#9654; YouTube</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="#" method="post">
+              <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input
+                  type="text"
+                  id="fullname"
+                  name="fullname"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                  <option value="general">General Enquiry</option>
+                  <option value="product">Product Information</option>
+                  <option value="wholesale">Wholesale / Bulk Orders</option>
+                  <option value="feedback">Complaint / Feedback</option>
+                  <option value="partnership">Partnership</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Write your message here..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-section">
+        <h2>Our Location</h2>
+        <iframe
+          src="https://maps.google.com/maps?q=Tema%20Industrial%20Area&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          title="GBfoods Ghana location map"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 GBfoods Ghana | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>
